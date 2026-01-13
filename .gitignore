@@ -1,1 +1,13 @@
+# --- Environment files (ignore everywhere) ---
 .env
+.env.*          # covers .env.local, .env.dev, .env.production, etc.
+**/.env
+**/.env.*       # recursive in all folders
+
+# --- Keep safe samples/templates (commit these) ---
+!.env.example
+!.env.template
+!**/.env.example
+!**/.env.template
+
+venv
