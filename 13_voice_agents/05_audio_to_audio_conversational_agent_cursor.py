@@ -8,7 +8,11 @@ import os,io
 from gtts import gTTS  # Use gTTS since Google OpenAI shim doesn't support TTS
 import pygame
 import speech_recognition as sr
+from dotenv import load_dotenv
+import os 
 
+load_dotenv()
+api_key = os.getenv("GOOGLE_API_KEY")
 #using basic text to speech 
 def tts(text):
     """
@@ -31,7 +35,7 @@ def tts(text):
 
 # Initialize OpenAI client with Gemini endpoint
 client = OpenAI(
-    api_key="AIzaSyBxfNfumG2MWtl8njFRRMML8ALd-JK_6VQ",  # Use your Gemini API key
+    api_key=api_key,  # Use your Gemini API key
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 

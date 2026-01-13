@@ -10,4 +10,6 @@
 !**/.env.example
 !**/.env.template
 
-venv
+venv    
+.DS_Store
+*/.DS_Store.*

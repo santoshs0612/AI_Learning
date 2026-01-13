@@ -4,13 +4,14 @@ import json
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from typing import Optional
-import os
+from dotenv import load_dotenv
+import os 
 
-# load_dotenv()
-
+load_dotenv()
+api_key = os.getenv("GOOGLE_API_KEY")
 # Initialize OpenAI client with Gemini endpoint
 client = OpenAI(
-    api_key="AIzaSyBxfNfumG2MWtl8njFRRMML8ALd-JK_6VQ",  # Use your Gemini API key
+    api_key=api_key,  # Use your Gemini API key
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 

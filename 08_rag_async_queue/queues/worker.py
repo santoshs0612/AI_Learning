@@ -2,7 +2,11 @@ from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from openai import OpenAI
+from dotenv import load_dotenv
+import os 
+
 load_dotenv()
+api_key = os.getenv("GOOGLE_API_KEY")
 
 embedding_model = GoogleGenerativeAIEmbeddings(model = "models/gemini-embedding-001")
 
@@ -30,7 +34,7 @@ def process_query(query:str):
     # Calling the LLM and giving system prompt and user query
 
     client = OpenAI(
-        api_key="AIzaSyBxfNfumG2MWtl8njFRRMML8ALd-JK_6VQ",
+        api_key=api_key,
         base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
     )
 
